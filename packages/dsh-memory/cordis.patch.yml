@@ -1,0 +1,5 @@
+# 插入「本地记忆」插件。配置项默认值见 package 的 Config：
+# 例：在 profile 的 cordis.patch.yml 里用 `- id: local-memory` 覆盖 config。
+- insert:
+    - id: local-memory
+      name: 'dsh-memory'

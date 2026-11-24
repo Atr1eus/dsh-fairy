@@ -1,0 +1,14 @@
+{
+  "name": "dsh-fairy-repo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fairy for DeepSeek Harness: a companion agent preset with its own chat panel, plus the local long-term memory plugin it builds on.",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present"
+  },
+  "license": "MIT"
+}

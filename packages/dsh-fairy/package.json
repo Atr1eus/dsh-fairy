@@ -1,0 +1,71 @@
+{
+  "name": "dsh-fairy",
+  "version": "1.3.0",
+  "description": "Fairy for DeepSeek Harness: a companion agent preset plus a dedicated chat entry (sidebar button + iMessage-style panel) that greets you when you walk in.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE",
+    "icon.png",
+    "sticker.jpg"
+  ],
+  "scripts": {
+    "test": "node test/fairy-check.mjs && node test/fairy-client-check.mjs && node test/fairy-media-check.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "agent-preset",
+    "companion",
+    "chat-ui"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "dsh-memory": "*"
+  },
+  "peerDependenciesMeta": {
+    "dsh-memory": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atr1eus/dsh-fairy.git",
+    "directory": "packages/dsh-fairy"
+  },
+  "homepage": "https://github.com/Atr1eus/dsh-fairy#readme",
+  "bugs": {
+    "url": "https://github.com/Atr1eus/dsh-fairy/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

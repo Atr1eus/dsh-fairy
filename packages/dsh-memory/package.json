@@ -1,0 +1,61 @@
+{
+  "name": "dsh-memory",
+  "version": "2.0.0",
+  "description": "Local long-term memory for DeepSeek Harness: remember/recall tools, first-turn memory context, rolling long-conversation summaries, and a Web sidebar panel. All data stays in plain files under ~/.dsh/memory.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/self-check.mjs && node test/integration.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "memory",
+    "long-term-memory"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atr1eus/dsh-fairy.git",
+    "directory": "packages/dsh-memory"
+  },
+  "homepage": "https://github.com/Atr1eus/dsh-fairy/tree/main/packages/dsh-memory#readme",
+  "bugs": {
+    "url": "https://github.com/Atr1eus/dsh-fairy/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

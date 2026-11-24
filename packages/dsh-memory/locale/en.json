@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Local Memory",
+    "description": "Remembers facts, preferences, and notes across sessions in plain local files, with a sidebar panel and rolling long-conversation summaries."
+  }
+}
